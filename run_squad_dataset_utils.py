@@ -26,7 +26,7 @@ import imp
 from io import open
 from typing import List
 
-from pytorch_pretrained_bert.tokenization import BasicTokenizer
+from transformers import BasicTokenizer
 
 def whitespace_tokenize(text):
     """Runs basic whitespace cleaning and splitting on a piece of text."""
