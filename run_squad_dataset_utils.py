@@ -15,13 +15,6 @@
 # limitations under the License.
 """ Load SQuAD dataset. """
 
-def whitespace_tokenize(text):
-    """Runs basic whitespace cleaning and splitting on a piece of text."""
-    text = text.strip()
-    if not text:
-        return []
-    tokens = text.split()
-    return tokens
 
 from __future__ import absolute_import, division, print_function
 
@@ -34,6 +27,15 @@ from io import open
 from typing import List
 
 from pytorch_pretrained_bert.tokenization import BasicTokenizer
+
+def whitespace_tokenize(text):
+    """Runs basic whitespace cleaning and splitting on a piece of text."""
+    text = text.strip()
+    if not text:
+        return []
+    tokens = text.split()
+    return tokens
+
 
 eval_utils = imp.load_source('eval_utils', 'evaluate-v1.1.py')
 
