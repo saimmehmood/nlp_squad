@@ -37,7 +37,7 @@ def whitespace_tokenize(text):
     return tokens
 
 
-eval_utils = imp.load_source(r'eval_utils', r'evaluate-v1.1.py')
+eval_utils = imp.load_source(r'eval_utils', r'evaluate_v1.1.py')
 
 logger = logging.getLogger(__name__)
 
