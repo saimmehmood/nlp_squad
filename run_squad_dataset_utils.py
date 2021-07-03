@@ -26,7 +26,6 @@ import imp
 from io import open
 from typing import List
 
-from __future__ import print_function
 from collections import Counter
 import string
 import re
