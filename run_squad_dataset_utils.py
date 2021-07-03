@@ -25,6 +25,7 @@ import collections
 import imp
 from io import open
 from typing import List
+from evaluate_v1 import evaluate
 
 from transformers import BasicTokenizer
 
@@ -37,7 +38,8 @@ def whitespace_tokenize(text):
     return tokens
 
 
-eval_utils = imp.load_source(r'eval_utils', r'evaluate_v1.1.py')
+#eval_utils = imp.load_source(r'eval_utils', r'evaluate_v1.1.py')
+#eval_utils = evaluate
 
 logger = logging.getLogger(__name__)
 
@@ -647,7 +649,7 @@ def write_predictions(all_examples, all_features, all_results, n_best_size,
             with open(output_null_log_odds_file, "w") as writer:
                 writer.write(json.dumps(scores_diff_json, indent=4) + "\n")
     
-    return eval_utils.evaluate(dev_data, all_predictions)
+    return evaluate(dev_data, all_predictions)
 
 def get_final_text(pred_text, orig_text, do_lower_case, verbose_logging=False):
     """Project the tokenized prediction back to the original text."""
